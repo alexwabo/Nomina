@@ -5,6 +5,7 @@ CREATE OR REPLACE PACKAGE DAF_K_DESARROLLO_RAPIDO IS
   -- Purpose : GENERAR AUTOMATICAMENTE LOS PAQUETES DE UNA APLICACION NOMINA
   -- Cambios: PAra pruebas BMO
   --Estos cambios los hice yo para prbar
+  --Otro cambio
 
   PROCEDURE DAF_P_K_VALIDA     (Pv_Owner VARCHAR2,
                                 Pv_Aplicacion VARCHAR2,
