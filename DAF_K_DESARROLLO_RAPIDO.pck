@@ -6,11 +6,13 @@ CREATE OR REPLACE PACKAGE DAF_K_DESARROLLO_RAPIDO IS
   -- Cambios: PAra pruebas BMO
   --Estos cambios los hice yo para prbar
   --Otro cambio
+  -- oTRAS PRUEBAS ESCENA 3
 
   PROCEDURE DAF_P_K_VALIDA     (Pv_Owner VARCHAR2,
                                 Pv_Aplicacion VARCHAR2,
                                 Pv_Author     VARCHAR2,
-                                Pv_MsgError OUT VARCHAR2);
+                                Pv_MsgError OUT VARCHAR2,
+                                pV_oTRO_eRROR OUT VARCHAR2);
   --
   PROCEDURE DAF_P_ESP_K_VALIDA (Pv_Owner VARCHAR2,
                                 Pv_Aplicacion VARCHAR2,
@@ -116,8 +118,8 @@ CREATE OR REPLACE PACKAGE BODY DAF_K_DESARROLLO_RAPIDO is
     Ln_Cantidad number;
     Lv_NombreTabla VARCHAR2(30);
     
-    error varchar2(2000);
     
+    LE_ERROR VARCHAR2(20000);
 BEGIN
 
      DBMS_OUTPUT.PUT_LINE ('CREATE OR REPLACE PACKAGE BODY '|| Pv_Aplicacion||'_K_VALIDA IS');
@@ -383,7 +385,7 @@ BEGIN
      END LOOP;
      DBMS_OUTPUT.PUT_LINE ('END '|| Pv_Aplicacion||'_K_VALIDA;');
      
-     error := 'Pruebas';
+     LE_ERROR := 'PRUEBA 3';
      
      EXCEPTION
                WHEN OTHERS THEN
